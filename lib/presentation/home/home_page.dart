@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         leading: AppBarLeadingButton(
           icon: Icons.menu,
           onTap: () {
-            //print('>>> Push Leading Button...');
+            print('>>> Push Leading Button...');
           },
         ),
       ),
