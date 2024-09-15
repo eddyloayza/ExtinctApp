@@ -26,12 +26,26 @@ class HomePage extends StatelessWidget {
         leading: AppBarLeadingButton(
           icon: Icons.menu,
           onTap: () {
-            print('>>> Push Leading Button...');
+            //print('>>> Push Leading Button...');
           },
         ),
       ),
-      body: PageView(
-        children: animals.map((e) => AnimalView(animal: e)).toList(),
+      body: Stack(
+        children: [
+          PageView(
+            children: animals.map((e) => AnimalView(animal: e)).toList(),
+          ),
+          Positioned(
+              bottom: MediaQuery.of(context).padding.bottom,
+              right: 0,
+              left: 0,
+              child: const Column(
+                children: [
+                  Icon(Icons.keyboard_arrow_down),
+                  Text('Talk to me'),
+                ],
+              ))
+        ],
       ),
     );
   }
